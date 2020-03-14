@@ -7744,6 +7744,22 @@ video {
   }
 }
 
+.activeTab {
+  border-top: 3px solid #dd6b20;
+}
+
+.border-purple {
+  border-color: #9561e2;
+}
+
+.border-purple {
+  border-color: #dd6b20;
+}
+
+.text-grey-darker {
+  color: #596a73;
+}
+
 @media (min-width: 640px) {
   .sm\:appearance-none {
     -webkit-appearance: none;

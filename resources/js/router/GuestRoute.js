@@ -2,6 +2,7 @@ import React from 'react';
 import store from '../store';
 import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import AppLayoutRoute from './AppLayoutRoute';
 
 const propTypes = {
   component: PropTypes.func.isRequired,
@@ -9,14 +10,14 @@ const propTypes = {
   location: PropTypes.object
 };
 
-const GuestRoute = ({ component: Component, ...rest }) => (
-  <Route
+const GuestRoute = ({ component: component, ...rest }) => (
+  <Route exact
     {...rest}
     render={props => {
       const { auth: { authenticated } } = store.getState();
 
       return !authenticated ? (
-        <Component {...props} />
+        <AppLayoutRoute component={component} {...props} />
       ) : (
         <Redirect
           to={{

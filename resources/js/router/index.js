@@ -14,6 +14,9 @@ import { connect } from 'react-redux';
 import { setLoading } from '../actions/loading';
 import { initAuthFromExistingToken } from '../actions/auth';
 import GuestRoute from './GuestRoute';
+// Reporting Components
+import Youth from '../pages/reporting/youth/Youth'
+import Population from '../pages/reporting/youth/Population'
 
 const propTypes = {
   setLoading: PropTypes.func.isRequired,
@@ -42,6 +45,10 @@ class App extends Component {
             <GuestRoute path="/signin" component={SignIn} />
             <GuestRoute path="/forgot-password" component={ForgotPassword} />
             <GuestRoute path="/password/reset/:token" component={ResetPassword} />
+            
+            <GuestRoute exact path="/reporting/youth" component={Youth} />
+            <GuestRoute exact path="/reporting/youth/population" component={Population} />
+
             <AuthRoute path="/home" component={Home} />
             <AuthRoute path="/profile/:id" component={Profile} />
             <Route component={NotFound} />

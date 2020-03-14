@@ -1,6 +1,8 @@
 import React from 'react';
 import AuthNav from '../../components/AuthNav';
+import GuestNav from '../../components/GuestNav';
 import Footer from '../../components/Footer';
+import Sidenav from '../../components/Sidenav';
 
 import PropTypes from 'prop-types';
 
@@ -9,11 +11,17 @@ const propTypes = {
 };
 
 const AppLayout = ({ children, ...rest }) => {
+  const currentPath = window.location.pathname;
   return (
     <div className="flex flex-col min-h-screen">
-      <AuthNav />
-      <div className="flex flex-1">
+      <GuestNav />
+      <div className="flex flex-1 overflow-hidden" style={{marginTop: 75}}>
+        {currentPath.includes('reporting')
+        ? <Sidenav style={{display: 'none'}} />
+        : null
+        }
         {children}
+        
       </div>
       <Footer />
     </div>

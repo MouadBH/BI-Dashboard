@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import DocumentTitle from 'react-document-title';
 
 const propTypes = {
-  auth: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired
 };
 

@@ -20,7 +20,8 @@ const AuthRoute = ({ component: Component, ...rest }) => (
       if (!authenticated) {
         setIntendedUrl(props.location.pathname);
       }
-
+      console.log(Component);
+      
       return authenticated ? (
         <AppLayoutRoute component={Component} {...props} />
       ) : (

@@ -26,6 +26,12 @@ Route::name('api.')->namespace('Api')->group(function () {
             // Socialite Login
             Route::post('google/signin', 'GoogleSignInController@SignIn');
         });
+        // Dimension Tables
+        Route::get('youth/dimension/years', 'YouthController@getYears')->name('years');
+        // Reporting Routes
+        Route::get('youth/population/', 'YouthController@population')->name('population');
+        Route::get('youth/population/male', 'YouthController@getMalePopulation')->name('population_male');
+        Route::get('youth/population/female', 'YouthController@getFemalePopulation')->name('population_female');
     });
 
     // Protected routes

@@ -24,7 +24,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="font-sans h-full text-grey-darkest">
+<body class="font-sans h-full text-grey-darkest bg-gray-100">
     <div id="app" class="flex flex-col">
     </div>
 </body>

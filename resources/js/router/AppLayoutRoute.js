@@ -10,7 +10,7 @@ const propTypes = {
 
 const AppLayoutRoute = ({ component: Component, ...rest }) => {
   return (
-    <Route {...rest} render={props => (
+    <Route exact {...rest} render={props => (
       <AppLayout>
         <Component {...props} />
       </AppLayout>
